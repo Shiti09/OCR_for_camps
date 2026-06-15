@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+ocr_venv/
+venv/
+.env
+
+# Node
+node_modules/
+dist/
+
+# OCR folders
+uploads/
+processed/
+outputs/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

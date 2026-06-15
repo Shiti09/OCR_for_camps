@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-0: #07090e;
+  --color-bg-1: #0b0f17;
+  --color-bg-2: #111726;
+  --color-line: #1f2937;
+  --color-accent: #22d3ee;
+  --color-accent-2: #a78bfa;
+}
+
+html, body, #root {
+  height: 100%;
+  background: #07090e;
+  color: #e5e7eb;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Animated grid backdrop */
+.bg-grid {
+  background-image:
+    radial-gradient(1200px 600px at 20% -10%, rgba(34, 211, 238, 0.12), transparent 60%),
+    radial-gradient(1000px 500px at 100% 0%, rgba(167, 139, 250, 0.10), transparent 60%),
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: auto, auto, 32px 32px, 32px 32px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(17,23,38,0.85), rgba(11,15,23,0.85));
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+}
+
+.glow-ring {
+  box-shadow: 0 0 0 1px rgba(34,211,238,0.25), 0 8px 40px -8px rgba(34,211,238,0.25);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #22d3ee, #a78bfa);
+  color: #0b0f17;
+  font-weight: 600;
+  transition: transform 120ms ease, box-shadow 200ms ease, filter 200ms ease;
+}
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 10px 30px -10px rgba(34,211,238,0.6);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e5e7eb;
+  transition: all 150ms ease;
+}
+.btn-ghost:hover:not(:disabled) {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(34,211,238,0.4);
+}
+.btn-ghost:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.input-cell {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 6px 8px;
+  width: 100%;
+  color: #e5e7eb;
+  font-size: 13px;
+  outline: none;
+  transition: all 120ms ease;
+}
+.input-cell:hover { background: rgba(255,255,255,0.03); }
+.input-cell:focus {
+  background: rgba(34,211,238,0.06);
+  border-color: rgba(34,211,238,0.5);
+}
+.input-cell.invalid {
+  background: rgba(239,68,68,0.10);
+  border-color: rgba(239,68,68,0.5);
+}
+.input-cell.warning {
+  background: rgba(245,158,11,0.08);
+  border-color: rgba(245,158,11,0.4);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.16); }
+
+/* Animations */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fade-in-up 280ms ease both; }
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(34,211,238,0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(34,211,238,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,211,238,0); }
+}
+.pulse-ring { animation: pulse-ring 1.8s infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 1.2s linear infinite; }
