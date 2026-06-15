@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 👁 OcuScribe — Ophthalmology Camp Register Digitizer
 
 A lightweight, correction-first workflow for digitizing handwritten ophthalmology
@@ -128,7 +127,5 @@ Schema:
 | `PROCESSED_DIR`      | `./processed`            |                                |
 | `OUTPUT_DIR`         | `./outputs`              |                                |
 | `ALLOWED_ORIGINS`    | `http://localhost:5173`  | comma-separated                |
-=======
 # OCR_for_camps
 An OCR web app for handwritten text to excel sheet or pushing to database after human intervention
->>>>>>> 19a5575f84e11f8cdbc54f23fcb05446e0ca23d8
