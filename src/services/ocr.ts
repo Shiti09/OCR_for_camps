@@ -14,10 +14,8 @@ import type { OCRResponse, PatientRow } from "../types";
  * end-to-end without a backend running.
  */
 
-const BACKEND_URL =
-  (typeof window !== "undefined" &&
-    (window as unknown as { __BACKEND_URL__?: string }).__BACKEND_URL__) ||
-  "";
+const BACKEND_URL =  import.meta.env.VITE_BACKEND_URL || "";
+  
 
 const uid = () =>
   Math.random().toString(36).slice(2, 9) + Date.now().toString(36).slice(-3);
