@@ -8,5 +8,5 @@ pandas==2.2.3
 pydantic==2.9.2
 python-dotenv==1.0.1
 supabase==2.7.4
-
+zai-sdk==0.2.2
 
